@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devlog</title>
+</head>
+<body>
+    <h1>Devlog</h1>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <a href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a>
+                <p>{{ post.content[:100] }}...</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
